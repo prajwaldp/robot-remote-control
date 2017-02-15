@@ -1,0 +1,23 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.input-field {
+  width: 100%;
+}
+
+#game-pad > #left-pad, #game-pad > #right-pad {
+  height: 200px;
+}
+
+.game-pad-button {
+  border-radius: 50%;
+  border: 1px solid #c3cccc80;
+  box-shadow: 1px 1px 10px #eee;
+}

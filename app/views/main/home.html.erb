@@ -1,0 +1,98 @@
+<header>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo center">Remote Control</a>
+    </div>
+  </nav>
+</header>
+
+<main id="app"
+      v-on:keyup.up="accelerate"
+      v-on:keyup.down="reverse"
+      v-on:keyup.left="turnLeft"
+      v-on:keyup.right="turnRight"
+      v-on:keyup.space="brake">
+
+  <div class="row">
+    <div class="col s6">
+
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Settings and Calibration</span>
+
+	  <!-- <div class="input-field">
+	       <input type="text" v-model="address" placeholder="Raspberry PI Address">
+	       </div>
+	       <div class="input_field">
+	       <a class="waves-effect waves-light btn">Activate</a>
+	       </div>
+	     -->
+	  <p class="range-field">
+	    Calibrate Left Motor
+	    <input type="range" v-model="leftCalibrate" min="0" max="255" />
+	  </p>
+
+	  <p class="range-field">
+	    Calibrate Right Motor
+	    <input type="range" v-model="rightCalibrate" min="0" max="255" />
+	  </p>
+	  <p class="range-field">
+	    Speed
+	    <input type="range" v-model="motorSpeed" min="100" max="200" />
+	  </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="col s6">
+
+      <div class="card">
+        <div class="card-content">
+	  <span class="card-title">Console</span>
+
+	  <div id="game-pad" class="row center">
+	    <div id="left-pad" class="col s4 valign-wrapper">
+	      <div class="row valign">
+		<div class="row">
+		  <a id="accelerate" href="#" v-on:click.stop.prevent="accelerate">
+		    <i class="material-icons md-48 game-pad-button">keyboard_arrow_up</i>
+		  </a>
+		</div>
+		<div class="row">
+		  <a id="reverse" href="#" v-on:click.stop.prevent="reverse">
+		    <i class="material-icons md-48 game-pad-button">keyboard_arrow_down</i>
+		  </a>
+		</div>
+	      </div>
+	    </div>
+
+	    <div id="middle-pad" class="col s4 valign-wrapper">
+	      <div class="row valign">
+		<a id="brake" href="#" v-on:click.stop.prevent="brake">
+		  <i class="material-icons md-48 game-pad-button">stop</i>
+		</a>
+	      </div>
+	    </div>
+
+	    <div id="right-pad" class="col s4 valign-wrapper">
+	      <div class="row valign">
+		<a id="left" href="#" v-on:click.stop.prevent="turnLeft">
+		  <i class="material-icons md-48 game-pad-button">keyboard_arrow_left</i>
+		</a>
+		<a id="right" href="#" v-on:click.stop.prevent="turnRight">
+		  <i class="material-icons md-48 game-pad-button">keyboard_arrow_right</i>
+		</a>
+	      </div>
+	    </div>
+	  </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- <footer class="page-footer">
+     </footer> -->
